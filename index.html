@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<!-- АДРЕС САЙТА: https://strvtverbigstepper.github.io/stepan-tarasov — при смене домена замените его во всех файлах
+     (index.html, cases/*/index.html, robots.txt, sitemap.xml): canonical, og:url, og:image и карта сайта. -->
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Степан Тарасов — Head of Marketing / CMO, резюме</title>
+  <meta name="description" content="Степан Тарасов, Head of Marketing: 9 лет в коммерции. Собрал отдел маркетинга с нуля, ROMI 700%, CPL 1 200 → 480 ₽. Открыт к предложениям Head of Marketing / CMO.">
+  <meta name="theme-color" content="#0B0A10">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Степан Тарасов — Head of Marketing / CMO, резюме">
+  <meta property="og:description" content="Степан Тарасов, Head of Marketing: 9 лет в коммерции. Собрал отдел маркетинга с нуля, ROMI 700%, CPL 1 200 → 480 ₽. Открыт к предложениям Head of Marketing / CMO.">
+  <meta property="og:image" content="https://strvtverbigstepper.github.io/stepan-tarasov/assets/og.jpg">
+  <meta property="og:url" content="https://strvtverbigstepper.github.io/stepan-tarasov/">
+  <link rel="canonical" href="https://strvtverbigstepper.github.io/stepan-tarasov/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="vendor/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/water-ripple.css"> слайд с водой убран -->
+  <link rel="stylesheet" href="css/card-scroll.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <!-- <link rel="stylesheet" href="css/showcase-3d.css"> -->
+</head>
+<body>
+
+  <!-- 1. НАВИГАЦИЯ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="monogram">
+        <span class="monogram__s">S</span>
+        <span class="monogram__t">T</span>
+        <span class="monogram__pn">PN</span><span class="visually-hidden"> — Степан Тарасов, на главную</span>
+      </a>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Основное меню">
+        <a href="#about">Профиль</a>
+        <a href="#experience">Карьера</a>
+        <a href="#cases">Достижения</a>
+        <a href="#skills">Компетенции</a>
+        <a href="#recommendations">Рекомендации</a>
+        <a href="#contact">Контакты</a>
+        <a href="assets/resume.pdf" download class="btn btn--primary nav__cta-mobile">Скачать резюме (PDF)</a>
+      </nav>
+
+      <a href="assets/resume.pdf" download class="btn btn--primary btn--sm nav__cta">Резюме PDF</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO -->
+    <section class="hero" id="hero">
+      <!-- Фон: жидкий градиент (js/hero-gradient.js); пятна — запасной вариант без WebGL -->
+      <canvas class="hero__fluid" id="heroFluid" aria-hidden="true"></canvas>
+      <div class="hero__blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <!-- Портрет: за именем, нижний край обрезан краем hero; WebP с альфой + PNG для старых браузеров -->
+      <picture class="hero__portrait">
+        <source type="image/webp" srcset="assets/photos/portrait/hero-800.webp 509w, assets/photos/portrait/hero-1400.webp 820w" sizes="(max-width: 767px) 62vw, 34vw">
+        <img src="assets/photos/portrait/hero-800.png" alt="Степан Тарасов" width="820" height="1289" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="hero__lockup-zone">
+        <div class="hero__lockup" aria-hidden="true">
+          <div class="hero__lockup-mark"><span class="hero__lockup-s">S</span><span class="hero__lockup-tpn">TPN</span></div>
+          <div class="hero__lockup-sub"><span class="hero__lockup-step">Step On</span><span class="hero__lockup-word">Marketing</span></div>
+          <svg class="hero__lockup-stairs" width="120" height="24" viewBox="0 0 120 24" fill="none">
+            <path d="M1,24 L1,18 L24,18 L24,12 L48,12 L48,6 L72,6 L72,1 L120,1" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__info">
+          <div class="hero__left">
+            <div class="hero__role">Head of Marketing / CMO · открыт к предложениям</div>
+            <p class="hero__slogan">9 лет в коммерции: от менеджера до Head of Marketing</p>
+            <div class="hero__cta">
+              <a href="assets/resume.pdf" download class="btn btn--primary btn--sm">Скачать резюме (PDF)</a>
+              <a href="https://tver.hh.ru/resume/86005855ff0c8f94990039ed1f5a6556324442" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">Профиль на hh.ru</a>
+            </div>
+          </div>
+          <div class="hero__location">Тверь · офис, гибрид, удалённо<br>Москва · СПб · Сочи · Екатеринбург · Краснодар</div>
+        </div>
+        <h1 class="hero__name" id="heroName"><span>Stepan</span> <span>Tarasov</span></h1>
+      </div>
+    </section>
+
+    <!-- СЛАЙД «РАБОТА БЕЗ ВОДЫ» — убран из резюме-версии (файлы js/water-ripple.js, css/water-ripple.css сохранены)
+    <section class="no-water" id="no-water">
+      <canvas id="water-ripple" aria-hidden="true"></canvas>
+      <h2 class="visually-hidden">Работа без воды</h2>
+      <span class="no-water__hint" aria-hidden="true">Проведите по экрану</span>
+      <p class="no-water__credit">Фото: <a href="https://unsplash.com/photos/rippling-crystal-blue-water-9-OCsKoyQlk" target="_blank" rel="noopener">Wesley Tingey</a> / Unsplash</p>
+    </section>
+    -->
+
+    <!-- 3. ПРОФИЛЬ -->
+    <section class="section about2" id="about">
+      <div class="container">
+        <div class="eyebrow"><span>01 / Профиль</span><span>Head of Marketing</span></div>
+        <h2 class="section__title about2__title">От <span class="grad">продаж</span> к маркетингу</h2>
+        <div class="about2__grid">
+          <div class="about2__left">
+            <p class="about2__lead">9 лет в коммерции: продажи, колл-центры, аналитика, маркетинг. Прошёл путь <em>от менеджера до Head of Marketing</em>.</p>
+            <p class="about2__text">Знаю воронку изнутри, потому что сам продавал и руководил продажами. Поэтому оцениваю маркетинг по заявкам, договорам и ROMI, а не по охватам. В СпартакМеб собрал отдел маркетинга с нуля, внедрил сквозную аналитику на Power BI и 1С, поднял ROMI до 700% и снизил CPL с 1&nbsp;200 до 480 ₽.</p>
+          </div>
+          <div class="about2__right">
+          <ol class="facts">
+            <li><span class="facts__n">01</span><b>Опыт</b><span class="facts__d">9 лет в коммерции, с 2017 года</span></li>
+            <li><span class="facts__n">02</span><b>Сейчас</b><span class="facts__d">Head of Marketing, СпартакМеб, с марта 2025</span></li>
+            <li><span class="facts__n">03</span><b>Команды</b><span class="facts__d">маркетинг до 10 человек; продажи 24 менеджера + 2 старших менеджера (тимлида); колл-центры 120+ операторов</span></li>
+            <li><span class="facts__n">04</span><b>Бюджеты</b><span class="facts__d">маркетинговый бюджет 700 тыс. – 1,5 млн ₽/мес</span></li>
+            <li><span class="facts__n">05</span><b>Отрасли</b><span class="facts__d">мебель (ритейл и B2B), EdTech, консалтинг</span></li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- МАСШТАБ И РЕЗУЛЬТАТЫ: закрепляется при прокрутке, числа считают от нуля (js/motion.js) -->
+    <section class="metrics" id="metrics" aria-label="Масштаб и результаты">
+      <div class="container">
+        <p class="metrics__eyebrow">Профиль в цифрах</p>
+        <h2 class="metrics__title">Масштаб и <span class="grad">результаты</span></h2>
+        <div class="metrics__grid">
+          <div class="metrics__item"><b class="metrics__num" data-pre="" data-to="700" data-suf="%">700%</b><span class="metrics__cap">ROMI · СпартакМеб (было 243%)</span></div>
+          <div class="metrics__item"><b class="metrics__num" data-pre="" data-to="480" data-suf=" ₽">480 ₽</b><span class="metrics__cap">CPL · СпартакМеб (было 1 200 ₽)</span></div>
+          <div class="metrics__item"><b class="metrics__num" data-pre="" data-to="10" data-suf="">10</b><span class="metrics__cap">человек на пике в отделе маркетинга, собранном с нуля за 5 месяцев</span></div>
+          <div class="metrics__item"><b class="metrics__num" data-pre="" data-to="8,8" data-suf=" млн">8,8 млн</b><span class="metrics__cap">₽ продаж в месяц у отдела с нуля · Синергия</span></div>
+          <div class="metrics__item"><b class="metrics__num" data-pre="" data-to="120" data-suf="+">120+</b><span class="metrics__cap">операторов в 5 колл-центрах · Like Центр</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. КАРЬЕРА (лестница: js/motion.js, блок 6) -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <h2 class="section__title">Карьера</h2>
+        <p class="skills-intro">От менеджера до Head of Marketing за 9 лет</p>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__year">2025 — н.в.</span>
+            <h3>Head of Marketing</h3>
+            <p class="tl-co"><span class="tlogo tlogo--spartakmeb" aria-hidden="true"><img src="assets/logos/companies/spartakmeb-white.png" alt="" width="640" height="101" loading="lazy"><img class="tlogo__c" src="assets/logos/companies/spartakmeb-color.png" alt="" width="640" height="101" loading="lazy"></span>СпартакМеб · Тверь</p>
+            <p class="timeline__note">Отдел маркетинга с нуля за 5 месяцев, на пике 10 человек: 4 товарных маркетолога, руководитель контента с дизайнером, контент-менеджером и AI-креатором. Бюджет 700 тыс. – 1,5 млн ₽/мес. ROMI 700%, CPL 1&nbsp;200 → 480 ₽, CAC 4&nbsp;100 → 2&nbsp;700 ₽. До этого: старший товарный маркетолог (янв–мар 2025), ROMI 43% → 243%.</p>
+            <a class="timeline__more" href="cases/spartakmeb/index.html">Подробнее о роли →</a>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2024 — 2025</span>
+            <h3>Руководитель отдела продаж</h3>
+            <p class="tl-co"><span class="tlogo tlogo--synergy" aria-hidden="true"><img src="assets/logos/companies/synergy-white.png" alt="" width="560" height="96" loading="lazy"><img class="tlogo__c" src="assets/logos/companies/synergy-color.png" alt="" width="560" height="96" loading="lazy"></span>Синергия · Москва</p>
+            <p class="timeline__note">Построил отдел с нуля: 24 менеджера + 2 старших менеджера (тимлида), 8,8 млн ₽ в месяц, план выполнен до 180%.</p>
+            <figure class="tl-photo"><div class="duo tl-photo__img"><img src="assets/photos/work/synergy.jpg" alt="Степан в лифте офиса, с бейджем" width="480" height="600" loading="lazy" decoding="async"></div><figcaption>Синергия</figcaption></figure>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2022 — 2024</span>
+            <h3>Начальник отдела аналитики продаж и ОКК</h3>
+            <p class="tl-co"><span class="tlogo tlogo--mono" aria-hidden="true">BB</span>Business Booster</p>
+            <p class="timeline__note">Команда 3 человека: аналитик, контроль качества, ассистент. CR в продажу +2,2%, NPS диагностики 73% → 84%, объём продаж ×1,2. Курировал внедрение AI в отдел продаж.</p>
+            <figure class="tl-photo"><div class="duo tl-photo__img"><img src="assets/photos/work/business-booster.jpg" alt="Степан у башен Петронас" width="480" height="600" loading="lazy" decoding="async"></div><figcaption>Business Booster</figcaption></figure>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2019 — 2022</span>
+            <h3>Руководитель колл-центра</h3>
+            <p class="tl-co"><span class="tlogo tlogo--like" aria-hidden="true"><img src="assets/logos/companies/like-white.png" alt="" width="530" height="240" loading="lazy"><img class="tlogo__c" src="assets/logos/companies/like-color.png" alt="" width="530" height="240" loading="lazy"></span>Like Центр · Москва</p>
+            <p class="timeline__note">5 колл-центров, до 126 операторов на пике из России и Европы (штат и аутсорс), управление через 5 тимлидов. ROI колл-центра до 900%. Участвовал в запусках вебинаров компании: объём продаж на пиках до 300 млн ₽ за уик-энд.</p>
+            <figure class="tl-photo"><div class="duo tl-photo__img"><img src="assets/photos/work/like.jpg" alt="Степан за ноутбуком в ночном офисе" width="480" height="600" loading="lazy" decoding="async"></div><figcaption>Like Центр</figcaption></figure>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2018 — 2019</span>
+            <h3>Тимлид / супервайзер колл-центра</h3>
+            <p class="tl-co"><span class="tlogo tlogo--skyeng" aria-hidden="true"><img src="assets/logos/companies/skyeng-white.svg" alt="" width="1172" height="181" loading="lazy"><img class="tlogo__c" src="assets/logos/companies/skyeng-color.svg" alt="" width="1172" height="181" loading="lazy"></span>Skyeng · Москва</p>
+            <p class="timeline__note">Команда 13 человек. CR заявка → оплата +4 п.п., средний чек 199&nbsp;000 ₽.</p>
+            <figure class="tl-photo"><div class="duo tl-photo__img"><img src="assets/photos/work/skyeng.jpg" alt="Степан с дипломом о высшем образовании" width="480" height="600" loading="lazy" decoding="async"></div><figcaption>Skyeng</figcaption></figure>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2017 — 2018</span>
+            <h3>Менеджер по работе с клиентами</h3>
+            <p class="tl-co"><span class="tlogo tlogo--foxmotion" aria-hidden="true"><img src="assets/logos/companies/foxmotion-white.png" alt="" width="240" height="240" loading="lazy"><img class="tlogo__c" src="assets/logos/companies/foxmotion-color.png" alt="" width="240" height="240" loading="lazy"></span>FoxMotion · Тверь</p>
+            <p class="timeline__note">Продажа услуг 3D mapping и анимации: лидогенерация, переговоры, КП.</p>
+            <figure class="tl-photo"><div class="duo tl-photo__img"><img src="assets/photos/work/foxmotion.jpg" alt="Портрет Степана" width="480" height="600" loading="lazy" decoding="async"></div><figcaption>FoxMotion</figcaption></figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. ДОСТИЖЕНИЯ В ДОЛЖНОСТЯХ -->
+    <section class="section" id="cases">
+      <div class="container">
+        <h2 class="section__title">Достижения в должностях</h2>
+
+        <div class="case-cards">
+          <a class="case-card case-card--a" href="cases/spartakmeb/index.html">
+            <div class="case-card__top">
+              <span class="clogo"><img src="assets/logos/spartakmeb-white.png" alt="СпартакМеб" width="640" height="101" loading="lazy"><img class="clogo__c" src="assets/logos/spartakmeb-color.png" alt="" aria-hidden="true" width="640" height="101" loading="lazy"></span>
+              <span class="pill">Head of Marketing</span><span class="pill">2025 — н.в.</span>
+            </div>
+            <div class="case-card__body">
+              <h3 class="case-card__title">Спартак<br>Меб</h3>
+              <p class="case-card__result">Отдел маркетинга с нуля за 5 месяцев, на пике 10 человек. ROMI 700%, CPL 1&nbsp;200 → 480 ₽, +23% продаж B2B за 3 месяца.</p>
+              <span class="case-card__link"><i aria-hidden="true">→</i>Подробнее о роли</span>
+            </div>
+          </a>
+          <a class="case-card case-card--b" href="cases/beard-travel/index.html">
+            <div class="case-card__top">
+              <span class="clogo clogo--beard"><img src="assets/logos/beard-wordmark-white.png" alt="beard.travel" width="1314" height="148" loading="lazy"><img class="clogo__c" src="assets/logos/beard-wordmark-color.png" alt="" aria-hidden="true" width="1314" height="148" loading="lazy"></span>
+              <span class="pill">Лендинг</span><span class="pill">Реклама и воронка</span>
+            </div>
+            <div class="case-card__body">
+              <h3 class="case-card__title">beard<br>.travel</h3>
+              <p class="case-card__result">Туры выходного дня на каяках, Тверская область. Лендинг, реклама и воронка: структура, тексты, вёрстка, запуск.</p>
+              <span class="case-card__link"><i aria-hidden="true">→</i>Смотреть кейс</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- ВИДЕО И КРЕАТИВ (js/video.js): тизеры играют без звука, когда в кадре; клик — плеер со звуком -->
+        <div class="creative" id="creative">
+          <h3 class="creative__title">Видео и креатив</h3>
+          <p class="creative__cap">Реклама для «СпартакМеб», 2026 · AI-продакшн: генерация Veo, сценарий, монтаж, звук. Все ролики вышли в эфир.</p>
+          <div class="vgrid">
+            <button type="button" class="vcard vcard--hero" data-src="assets/video/sosedka.mp4" data-title="«Соседка»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/sosedka.webp" data-teaser="assets/video/sosedka-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Соседка»</b> · ТВ-ролик · 0:16</span>
+            </button>
+            <button type="button" class="vcard" data-src="assets/video/kuhni.mp4" data-title="«Кухни»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/kuhni.webp" data-teaser="assets/video/kuhni-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Кухни»</b> · 0:10</span>
+            </button>
+            <button type="button" class="vcard" data-src="assets/video/kuhni-tv.mp4" data-title="«Кухни», ТВ-версия">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/kuhni-tv.webp" data-teaser="assets/video/kuhni-tv-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Кухни», ТВ-версия</b> · 0:10</span>
+            </button>
+            <button type="button" class="vcard" data-src="assets/video/smeh.mp4" data-title="«Садовая мебель»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/smeh.webp" data-teaser="assets/video/smeh-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Садовая мебель»</b> · ТВ · 0:11</span>
+            </button>
+            <button type="button" class="vcard" data-src="assets/video/roditeli.mp4" data-title="«Родители»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/roditeli.webp" data-teaser="assets/video/roditeli-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Родители»</b> · ТВ · 0:16</span>
+            </button>
+            <button type="button" class="vcard" data-src="assets/video/stolovye.mp4" data-title="«Столовые группы»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/stolovye.webp" data-teaser="assets/video/stolovye-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Столовые группы»</b> · 0:17</span>
+            </button>
+            <button type="button" class="vcard vcard--tall" data-src="assets/video/ustali.mp4" data-title="«Устали»">
+              <video class="vcard__teaser" muted loop playsinline preload="none" data-poster="assets/video/ustali.webp" data-teaser="assets/video/ustali-teaser.mp4"></video>
+              <span class="vcard__badge">AI · Veo</span><span class="vcard__meta"><b>«Устали»</b> · версия для соцсетей и Директа · 0:20</span>
+            </button>
+          </div>
+          <div class="radio">
+            <div class="radio__row"><button type="button" class="radio__play" data-audio="assets/audio/shkola.m4a" aria-label="Слушать радиоролик «Школа»"><span aria-hidden="true">▶</span></button><b>Радио · «Школа»</b><span class="radio__dur">0:15</span><img class="radio__wave" src="assets/audio/shkola-wave.png" alt="" width="600" height="60" loading="lazy"></div>
+            <div class="radio__row"><button type="button" class="radio__play" data-audio="assets/audio/dostavka.m4a" aria-label="Слушать радиоролик «Доставка»"><span aria-hidden="true">▶</span></button><b>Радио · «Доставка»</b><span class="radio__dur">0:12</span><img class="radio__wave" src="assets/audio/dostavka-wave.png" alt="" width="600" height="60" loading="lazy"></div>
+          </div>
+          <p class="creative__channels">В эфире: СТС · НТВ · ТНТ · Россия · «Тверской проспект» · Яндекс Смарт ТВ · Smart TV</p>
+          <dialog class="vbox" id="vbox" aria-label="Видеоролик">
+            <button type="button" class="vbox__close" aria-label="Закрыть">×</button>
+            <video class="vbox__video" controls playsinline preload="none"></video>
+          </dialog>
+        </div>
+
+        <!-- Кейсы CRM B2B, AI-автоматизация и Репутация: убраны с главной, отдельные страницы сделаем позже по шаблону cases/
+        <article class="case">
+          <div class="case__head">
+            <span class="case__num">01</span>
+            <div>
+              <h3 class="case__title">Рост трафика и заявок «Спартакмеб»</h3>
+              <p class="case__meta">Мебельный ритейл · 2025</p>
+            </div>
+          </div>
+          <p class="case__task"><b>Задача:</b> Построить систему привлечения клиентов онлайн и офлайн, выстроить аналитику, масштабировать команду.</p>
+          <ul class="stats">
+            <li><b>×2</b><span>спрос на бренд в поиске</span></li>
+            <li><b>+286%</b><span>посетителей сайта</span></li>
+            <li><b>8,82%</b><span>конверсия в диалог с ИИ-чатом</span></li>
+            <li><b>219+51</b><span>звонков и заказов в CRM</span></li>
+            <li><b>1,4 млн</b><span>просмотров за 9 месяцев</span></li>
+            <li><b>+463%</b><span>охват контента VK</span></li>
+          </ul>
+          <p class="case__desc">Собрал отдел маркетинга с нуля до 11 человек за 3 месяца. Внедрил сквозную аналитику на Power BI. Запустил контекст, таргет, CRM-маркетинг, influence-канал. Поднял ROMI с 243% до 700%.</p>
+        </article>
+
+        <article class="case">
+          <div class="case__head">
+            <span class="case__num">02</span>
+            <div>
+              <h3 class="case__title">CRM-маркетинг для B2B с нуля</h3>
+              <p class="case__meta">B2B оптовые продажи · 2025</p>
+            </div>
+          </div>
+          <p class="case__task"><b>Задача:</b> Вернуть потерянных оптовых клиентов и увеличить продажи B2B-направления.</p>
+          <ul class="stats">
+            <li><b>24%</b><span>возврат потерянных клиентов</span></li>
+            <li><b>+23%</b><span>рост продаж B2B за 3 месяца</span></li>
+          </ul>
+          <p class="case__desc">Построил CRM-маркетинг с нуля: сегментация базы, email и SMS-цепочки по спящим и текущим клиентам. Разработал стратегию и механику рассылок.</p>
+        </article>
+
+        <article class="case">
+          <div class="case__head">
+            <span class="case__num">03</span>
+            <div>
+              <h3 class="case__title">AI-автоматизация контроля качества</h3>
+              <p class="case__meta">Автоматизация · 2025</p>
+            </div>
+          </div>
+          <p class="case__task"><b>Задача:</b> Автоматизировать прослушку и оценку звонков менеджеров по 34 сотрудникам.</p>
+          <ul class="stats">
+            <li><b>+12 п.п.</b><span>конверсия из лида в договор</span></li>
+            <li><b>100%</b><span>автоматизация аудита звонков</span></li>
+            <li><b>6</b><span>чат-ботов создано</span></li>
+          </ul>
+          <p class="case__desc">Написал на Python программу, которая транскрибирует звонки из Битрикс24 и проводит аудит через ИИ по разработанному чек-листу. Создал 6 чат-ботов для мессенджеров.</p>
+        </article>
+
+        <article class="case">
+          <div class="case__head">
+            <span class="case__num">04</span>
+            <div>
+              <h3 class="case__title">Репутация и клиентский сервис</h3>
+              <p class="case__meta">Репутационный маркетинг · 2025</p>
+            </div>
+          </div>
+          <p class="case__task"><b>Задача:</b> Поднять лояльность клиентов и рейтинги компании на картах.</p>
+          <ul class="stats">
+            <li><b>+21%</b><span>рост NPS</span></li>
+            <li><b>+0.2</b><span>рейтинг Яндекс.Карты за 3 месяца</span></li>
+            <li><b>+0.4</b><span>рейтинг 2ГИС за 3 месяца</span></li>
+          </ul>
+          <p class="case__desc">Взял фокус на клиентский сервис: работа с отзывами, офферы для привлечения позитивного фидбэка, контроль качества обслуживания.</p>
+        </article>
+        -->
+
+        <div class="cta-inline">
+          <p>Полная история по каждой должности есть в резюме</p>
+          <a href="assets/resume.pdf" download class="btn btn--primary">Скачать резюме (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ЗОНЫ ОТВЕТСТВЕННОСТИ -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title">Зоны ответственности</h2>
+        <p class="skills-intro">Чем занимаюсь как руководитель маркетинга. Цифры с текущего места: <em>СпартакМеб</em>.</p>
+        <ol class="skills">
+          <li class="skill">
+            <span class="skill__num">01</span>
+            <h3 class="skill__title">Стратегия и бюджет</h3>
+            <p class="skill__desc">Декомпозиция целей по выручке в планы привлечения и KPI. Распределение бюджета в конверсионные каналы.</p>
+            <ul class="chips"><li>KPI</li><li>Юнит-экономика</li><li class="hl">ROMI 700%</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">02</span>
+            <h3 class="skill__title">Построение отдела</h3>
+            <p class="skill__desc">Оргструктура, найм, адаптация, мотивация. SMM и SEO на аутсорсе.</p>
+            <ul class="chips"><li>Найм</li><li>KPI</li><li>Обучение</li><li class="hl">0 → 10 человек</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">03</span>
+            <h3 class="skill__title">Performance</h3>
+            <p class="skill__desc">Яндекс.Директ, VK Ads, Авито, TG Ads. Бюджет 700 тыс. – 1,5 млн ₽/мес.</p>
+            <ul class="chips"><li>Директ</li><li>VK Ads</li><li>Авито</li><li class="hl">CAC 4&nbsp;100 → 2&nbsp;700 ₽</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">04</span>
+            <h3 class="skill__title">Сквозная аналитика</h3>
+            <p class="skill__desc">Power BI, 1С, коллтрекинг, Битрикс24. Контроль ROMI, ДРР, CAC, CPL, LTV. Сертификат Яндекс.Метрики.</p>
+            <ul class="chips"><li>Power BI</li><li>1С</li><li>Метрика</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">05</span>
+            <h3 class="skill__title">CRM и удержание</h3>
+            <p class="skill__desc">B2B CRM-маркетинг для опта с нуля: сегментация базы, email- и SMS-цепочки, реактивация.</p>
+            <ul class="chips"><li>Email</li><li>SMS</li><li class="hl">+23% продаж B2B</li><li class="hl">24% спящей базы вернули</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">06</span>
+            <h3 class="skill__title">AI и автоматизация</h3>
+            <p class="skill__desc">ИИ-аудит звонков: Python транскрибирует звонки из Битрикс24 и проверяет их через Yandex GPT по чек-листу.</p>
+            <ul class="chips"><li>Python</li><li>Yandex GPT</li><li class="hl">100% звонков на аудите</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">07</span>
+            <h3 class="skill__title">Бренд, контент, офлайн</h3>
+            <p class="skill__desc">SMM, видео, influence, PR, ТВ, радио, event.</p>
+            <ul class="chips"><li>VK</li><li>ТВ</li><li>Радио</li><li class="hl">Охват VK +463% (янв–авг 2026)</li></ul>
+          </li>
+          <li class="skill">
+            <span class="skill__num">08</span>
+            <h3 class="skill__title">Репутация и сервис</h3>
+            <p class="skill__desc">Работа с отзывами на Яндекс.Картах и в 2ГИС, синхронизация маркетинга и продаж.</p>
+            <ul class="chips"><li>Яндекс.Карты</li><li>2ГИС</li><li class="hl">NPS +21%</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. УМЕЮ РУКАМИ (карточки едут при прокрутке: js/card-scroll.js) -->
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio__sticky">
+        <div class="portfolio__head container">
+          <h2 class="section__title">Умею руками</h2>
+          <p class="portfolio__subtitle portfolio__label">Скриншоты ниже: <span class="grad">лендинги</span>, которые я собрал сам</p>
+        </div>
+        <div class="card-scroll-wrap">
+          <canvas id="cardScrollCanvas" aria-label="Примеры работ, сделанных лично"></canvas>
+        </div>
+        <div class="card-scroll-meta" aria-live="polite">
+          <p class="card-scroll-meta__count"></p>
+          <h3 class="card-scroll-meta__title"></h3>
+          <p class="card-scroll-meta__desc"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="tools">
+      <div class="container">
+        <p class="skills-intro">Могу не только поставить задачу, но и сделать сам: <span class="grad">лендинги</span>, автоматизации на Python, дашборды. Инструменты:</p>
+        <div class="toolgroups">
+          <div class="toolgroup"><h3 class="toolgroup__label">Реклама</h3><ul class="toolgroup__list"><li>Яндекс.Директ</li><li>VK Ads</li><li>Авито Ads</li><li>TG Ads</li></ul></div>
+          <div class="toolgroup"><h3 class="toolgroup__label">Аналитика</h3><ul class="toolgroup__list"><li>Яндекс.Метрика</li><li>Power BI</li><li>DataLens</li><li>Calltouch</li><li>Excel</li></ul></div>
+          <div class="toolgroup"><h3 class="toolgroup__label">CRM и учёт</h3><ul class="toolgroup__list"><li>Битрикс24</li><li>AMO CRM</li><li>1С</li></ul></div>
+          <div class="toolgroup"><h3 class="toolgroup__label">AI и код</h3><ul class="toolgroup__list"><li>Python</li><li>Claude Code</li><li>Codex</li></ul></div>
+          <div class="toolgroup"><h3 class="toolgroup__label">Дизайн и сборка</h3><ul class="toolgroup__list"><li>Tilda</li><li>Figma</li><li>MIRO</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КЕЙСЫ 3D (js/cases-3d.js) — отключено, дублировало кейсы
+    
+    <div class="cases3d-intro" id="cases3d-intro">
+      <h2 class="cases3d-heading">Кейсы</h2>
+      <div class="cases3d-hint" aria-hidden="true">↓ крути вниз</div>
+    </div>
+    <section class="cases3d-section" id="cases3d-section" aria-label="Кейсы">
+      <div class="cases3d-sticky" id="cases3d-sticky">
+        <canvas id="cases3dCanvas" aria-hidden="true"></canvas>
+      </div>
+    </section>
+    -->
+
+    <!-- МЕТРИКИ РОСТА (js/scroll-reveal.js) — переехали на cases/spartakmeb/index.html
+    
+    <div class="scroll-reveal-intro" id="scroll-reveal-intro">
+      <p class="scroll-reveal-label">Спартакмеб · янв–сен 2026</p>
+      <h2 class="scroll-reveal-heading">Метрики роста</h2>
+      <div class="scroll-reveal-hint" aria-hidden="true">↓ крути вниз</div>
+    </div>
+
+    <section class="scroll-reveal-section" id="scroll-reveal-section" aria-label="Метрики роста СпартакМеб">
+      <div class="scroll-reveal-sticky" id="scroll-reveal-sticky"></div>
+    </section>
+    -->
+
+    <!-- 6. ОПЫТ -->
+    <!-- 3D SHOWCASE -->
+    <!-- 3D-буквы STPN (js/showcase-3d.js) — убраны с главной по просьбе владельца
+    <section class="showcase3d" id="showcase3d" aria-label="Кейсы в цифрах">
+      <div class="showcase3d__sticky">
+        <canvas id="showcase3dCanvas" aria-hidden="true"></canvas>
+        <div class="showcase3d__cards" id="showcase3dCards">
+          <!~~ Пустая скрытая карточка: без неё js/showcase-3d.js не запускает 3D-логотип ~~>
+          <article class="showcase3d__card" data-index="0" hidden></article>
+          <!~~ Карточки кейсов — дубль блока «Кейсы», убраны
+          <article class="showcase3d__card" data-index="0">
+            <span class="showcase3d__num">01</span>
+            <h3 class="showcase3d__title">Спартакмеб</h3>
+            <p class="showcase3d__desc">Мебельный ритейл · 2025</p>
+            <div class="showcase3d__metrics">
+              <div class="showcase3d__metric"><b>×2</b><span>бренд в поиске</span></div>
+              <div class="showcase3d__metric"><b>+286%</b><span>трафик сайта</span></div>
+              <div class="showcase3d__metric"><b>8,82%</b><span>конверсия</span></div>
+            </div>
+          </article>
+          <article class="showcase3d__card" data-index="1">
+            <span class="showcase3d__num">02</span>
+            <h3 class="showcase3d__title">CRM B2B</h3>
+            <p class="showcase3d__desc">Оптовые продажи · 2025</p>
+            <div class="showcase3d__metrics">
+              <div class="showcase3d__metric"><b>24%</b><span>возврат клиентов</span></div>
+              <div class="showcase3d__metric"><b>+23%</b><span>рост продаж</span></div>
+            </div>
+          </article>
+          <article class="showcase3d__card" data-index="2">
+            <span class="showcase3d__num">03</span>
+            <h3 class="showcase3d__title">AI-автоматизация</h3>
+            <p class="showcase3d__desc">Автоматизация · 2025</p>
+            <div class="showcase3d__metrics">
+              <div class="showcase3d__metric"><b>+12 п.п.</b><span>конверсия</span></div>
+              <div class="showcase3d__metric"><b>100%</b><span>автоаудит</span></div>
+              <div class="showcase3d__metric"><b>6</b><span>чат-ботов</span></div>
+            </div>
+          </article>
+          <article class="showcase3d__card" data-index="3">
+            <span class="showcase3d__num">04</span>
+            <h3 class="showcase3d__title">Репутация</h3>
+            <p class="showcase3d__desc">Репутационный маркетинг · 2025</p>
+            <div class="showcase3d__metrics">
+              <div class="showcase3d__metric"><b>+21%</b><span>NPS</span></div>
+              <div class="showcase3d__metric"><b>+0.4</b><span>рейтинг 2ГИС</span></div>
+            </div>
+          </article>
+          ~~>
+        </div>
+      </div>
+    </section>
+
+    -->
+
+    <!-- 8. ОБРАЗОВАНИЕ И СЕРТИФИКАТЫ -->
+    <section class="section section--alt" id="certificates">
+      <div class="container">
+        <h2 class="section__title">Образование и сертификаты</h2>
+        <ol class="facts edu">
+          <li><span class="facts__n">2022</span><b>Магистратура</b><span class="facts__d">СПбПУ Петра Великого</span></li>
+          <li><span class="facts__n">2020</span><b>Высшее</b><span class="facts__d">Тверской государственный университет</span></li>
+        </ol>
+        <div class="certs">
+          <div class="cert"><button type="button" class="cert__img cert__img--photo" data-full="assets/certs/yandex-metrika.jpg" data-alt="Сертификат специалиста Яндекс Метрики, Степан Тарасов, № 316060" aria-label="Открыть сертификат: Яндекс.Метрика"><img src="assets/certs/yandex-metrika-thumb.jpg" alt="Сертификат специалиста Яндекс Метрики, Степан Тарасов, № 316060" width="396" height="560" loading="lazy" decoding="async"></button><h3>Яндекс.Метрика</h3><p>Сертификат специалиста · № 316060, до 11.09.2027</p></div>
+          <div class="cert"><button type="button" class="cert__img cert__img--photo" data-full="assets/certs/yandex-direct.jpg" data-alt="Сертификат специалиста Яндекс Директа, базовый уровень, Степан Тарасов, № 317037" aria-label="Открыть сертификат: Яндекс.Директ"><img src="assets/certs/yandex-direct-thumb.jpg" alt="Сертификат специалиста Яндекс Директа, базовый уровень, Степан Тарасов, № 317037" width="396" height="560" loading="lazy" decoding="async"></button><h3>Яндекс.Директ</h3><p>Базовый уровень · № 317037, до 02.10.2027</p></div>
+          <div class="cert"><button type="button" class="cert__img cert__img--photo" data-full="assets/certs/skyeng-diploma.jpg" data-alt="Диплом о профессиональной переподготовке «Интернет-маркетолог», ОАНО ДПО «Скаенг», Степан Тарасов, 458 часов, 2026" aria-label="Открыть диплом: Скаенг · Интернет-маркетолог"><img src="assets/certs/skyeng-diploma-thumb.jpg" alt="Диплом Скаенг «Интернет-маркетолог», Степан Тарасов" width="560" height="395" loading="lazy" decoding="async"></button><h3>Скаенг · Интернет-маркетолог</h3><p>Диплом переподготовки · 458 ч, 2026</p></div>
+          <!-- скрыто по просьбе владельца: <div class="cert"><div class="cert__img">сертификат</div><h3>Проджект-менеджмент</h3><p>Университет «Синергия» · 2025</p></div> -->
+          <!-- скрыто по просьбе владельца: <div class="cert"><div class="cert__img">сертификат</div><h3>РеОП от Resulting</h3><p>Реальный отдел продаж · 2024</p></div> -->
+        </div>
+      </div>
+      <!-- Просмотр сертификата во весь экран (js/certs.js) -->
+      <dialog class="lightbox" id="certLightbox" aria-label="Сертификат">
+        <button type="button" class="lightbox__close" aria-label="Закрыть">×</button>
+        <img class="lightbox__img" alt="">
+      </dialog>
+    </section>
+
+
+    <!-- 10. ПОСЛЕ РАБОТЫ -->
+    <section class="section section--tight" id="hobbies">
+      <div class="container">
+        <div class="hobbies">
+          <div class="hobbies__head"><h2 class="hobbies__title">После работы</h2><span class="hobbies__hint">Наведите на карточку — фото оживает</span></div>
+          <ul class="hobbies__strip">
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/basketball.jpg" alt="Степан с мячом на баскетбольной площадке" loading="lazy" decoding="async"></div><b>Баскетбол</b><small>17 лет в полупрофессиональном режиме</small></li>
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/splav.jpg" alt="Степан с собакой в лодке на реке" loading="lazy" decoding="async"></div><b>Сплавы</b><small>Ежегодные летние сплавы</small></li>
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/hike.jpg" alt="Степан с рюкзаком и трекинговыми палками" loading="lazy" decoding="async"></div><b>Хайкинг</b><small>Лучший способ испытать себя</small></li>
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/hike-snow.jpg" alt="Степан в маске и очках на заснеженном склоне" loading="lazy" decoding="async"></div><b>Горы</b><small>Восхождения в любую погоду</small></li>
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/bike.jpg" alt="Степан на горном велосипеде в лесу" loading="lazy" decoding="async"></div><b>Вело</b><small>Гонки на выносливость</small></li>
+            <li class="hobby" tabindex="0"><div class="duo hobby__img"><img src="assets/photos/surf.jpg" alt="Степан с доской на берегу на закате" loading="lazy" decoding="async"></div><b>Сёрф</b><small>Когда удаётся вырваться к океану</small></li>
+          </ul>
+          <p class="hobbies__more">Ещё: гитара · падел</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. РЕКОМЕНДАЦИИ -->
+    <section class="section" id="recommendations">
+      <div class="container">
+        <h2 class="section__title">Рекомендации</h2>
+        <div class="recs">
+          <figure class="rec">
+            <span class="rec__mark" aria-hidden="true">“</span>
+            <blockquote class="rec__quote"><p>«Степан пришёл в «Спартакмеб» старшим маркетологом и очень быстро показал, что мыслит шире своей должности. … Он сам описал структуру будущего отдела, вместе со мной провёл подбор, выстроил адаптацию и уже через три месяца руководил полноценной командой. … Для HR это лучший тип руководителя: с ним команда становится сильнее, а не просто выполняет задачи.»</p></blockquote>
+            <details class="rec__more"><summary>Читать полностью</summary><div class="rec__full"><p>Мне приятно рекомендовать Степана Тарасова. Степан пришёл в «Спартакмеб» старшим маркетологом и очень быстро показал, что мыслит шире своей должности. Маркетинга как отдела у нас тогда фактически не было: несколько человек без чёткой структуры и зон ответственности. Степан не стал ждать идеального момента. Он сам описал структуру будущего отдела, вместе со мной провёл подбор, выстроил адаптацию и уже через три месяца руководил полноценной командой.</p><p>Больше всего меня впечатлило, как он работает с людьми. Степан даёт сотрудникам ясные цели и честную обратную связь, а оценивает их по фактам, а не по симпатии. За годы руководства в продажах и колл-центрах он научился находить подход и к опытным специалистам, и к новичкам. Поэтому люди в его команде быстро растут и не уходят.</p><p>Степан спокоен в стрессовых ситуациях, легко договаривается с отделом продаж и другими подразделениями и сам приходит с идеями, как улучшить процессы. Для HR это лучший тип руководителя: с ним команда становится сильнее, а не просто выполняет задачи. Рекомендую Степана как зрелого руководителя и надёжного коллегу.</p></div></details>
+            <figcaption class="rec__who"><b>Даяна Мироненко</b><span>HRD «СпартакМеб»</span><img src="assets/logos/spartakmeb-white.png" alt="СпартакМеб" width="640" height="101" loading="lazy"></figcaption>
+          </figure>
+          <figure class="rec">
+            <span class="rec__mark" aria-hidden="true">“</span>
+            <blockquote class="rec__quote"><p>«Когда я пришёл в «Спартакмеб» коммерческим директором, отдел маркетинга под руководством Степана Тарасова уже работал как система. … с первых дней я видел, сколько стоит каждый клиент и из какого канала он пришёл. … Со Степаном легко работать в связке маркетинга и продаж: он говорит на языке выручки и сам предлагает, где её добрать.»</p></blockquote>
+            <details class="rec__more"><summary>Читать полностью</summary><div class="rec__full"><p>Когда я пришёл в «Спартакмеб» коммерческим директором, отдел маркетинга под руководством Степана Тарасова уже работал как система. Для меня это стало редким подарком: с первых дней я видел, сколько стоит каждый клиент и из какого канала он пришёл.</p><p>Что я ценю в работе Степана:</p><ul><li><b>Рост окупаемости.</b> ROAS в среднем рос на 17 п.п. от месяца к месяцу.</li><li><b>Дешёвые лиды.</b> На хорошо проработанных акционных кампаниях стоимость заявки в пике снижалась до 375 ₽.</li><li><b>CRM-маркетинг.</b> Степан придумал удобный HTML-формат рассылок, и в первые две недели теста кликабельность выросла на 24 п.п.</li><li><b>Техника своими руками.</b> Сам настраивает Директ, Avito Ads, VK Ads и TG Ads. Написал на Python ИИ-аудит звонков, который помог поднять конверсию в сделку.</li><li><b>Креатив без студий.</b> UGC, реферальная программа. Сам монтирует видео и делает ИИ-ролики для радио.</li></ul><p>Со Степаном легко работать в связке маркетинга и продаж: он говорит на языке выручки и сам предлагает, где её добрать. Рекомендую.</p></div></details>
+            <figcaption class="rec__who"><b>Роман Образцов</b><span>Коммерческий директор «СпартакМеб»</span><img src="assets/logos/spartakmeb-white.png" alt="СпартакМеб" width="640" height="101" loading="lazy"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. КОНТАКТЫ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__left">
+          <h2 class="section__title">Контакты</h2>
+          <p class="contact__sub">Рассматриваю роли Head of Marketing и CMO в компаниях, где маркетинг отвечает за выручку.</p>
+          <a href="assets/resume.pdf" download class="btn btn--primary btn--xl">Скачать резюме (PDF)</a>
+          <ul class="contact__links">
+            <li><a href="https://tver.hh.ru/resume/86005855ff0c8f94990039ed1f5a6556324442" target="_blank" rel="noopener">hh.ru: <b>профиль</b></a></li>
+            <li><a href="https://t.me/strv_1" target="_blank" rel="noopener">Telegram <b>@strv_1</b></a></li>
+            <li><a href="mailto:stevy359@yandex.ru">Email <b>stevy359@yandex.ru</b></a></li>
+          </ul>
+        </div>
+        <ol class="facts">
+          <li><span class="facts__n">01</span><b>Занятость</b><span class="facts__d">полная</span></li>
+          <li><span class="facts__n">02</span><b>Формат</b><span class="facts__d">офис, гибрид, удалённо</span></li>
+          <li><span class="facts__n">03</span><b>Город</b><span class="facts__d">живу в Твери; приоритет: Москва, СПб, Сочи, Екатеринбург, Краснодар</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="monogram">
+        <span class="monogram__s">S</span>
+        <span class="monogram__t">T</span>
+        <span class="monogram__pn">PN</span><span class="visually-hidden"> — наверх</span>
+      </a>
+      <p><span class="tagline">Big steps only</span> © 2026 Степан Тарасов</p>
+      <div class="footer__links">
+        <a href="https://tver.hh.ru/resume/86005855ff0c8f94990039ed1f5a6556324442" target="_blank" rel="noopener">hh.ru</a>
+        <a href="https://t.me/strv_1" target="_blank" rel="noopener">Telegram</a>
+        <a href="mailto:stevy359@yandex.ru">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/hero-gradient.js"></script>
+  <!-- 3D-буквы отключены: <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <script src="js/showcase-3d.js"></script> -->
+  <script src="js/main.js"></script>
+  <!-- <script src="js/water-ripple.js"></script> слайд с водой убран -->
+  <script src="js/card-scroll.js"></script>
+  <!-- Анимации: GSAP 3.13.0 + ScrollTrigger + SplitText, Lenis 1.1.20 — локальные копии в vendor/ -->
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/SplitText.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/certs.js"></script>
+  <script src="js/video.js"></script>
+  <!-- <script src="js/scroll-reveal.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/opentype.js/1.3.4/opentype.min.js"></script> -->
+  <!-- <script src="js/cases-3d.js"></script> -->
+</body>
+</html>

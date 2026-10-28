@@ -1,0 +1,56 @@
+/* ===== Пакет анимаций (js/motion.js) ===== */
+/* Lenis сам ведёт плавный скролл — отключаем CSS smooth, чтобы они не спорили */
+html.lenis-on { scroll-behavior: auto; }
+html.lenis-on.lenis-stopped { overflow: hidden; }
+
+/* Метрики на главной */
+.metrics { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: var(--section-pad) 0; background: var(--bg); position: relative; overflow: hidden; }
+.metrics::before { content: ""; position: absolute; z-index: 0; left: -30vmax; top: 15%; width: 70vmax; height: 40vmax; border-radius: 50%; filter: blur(90px); opacity: .22; pointer-events: none; background: radial-gradient(closest-side, var(--c1), transparent), radial-gradient(closest-side at 70% 50%, var(--c3), transparent); }
+.metrics .container { position: relative; z-index: 1; }
+.metrics__eyebrow { font: 500 11px/1 var(--f-inter); letter-spacing: .14em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 18px; }
+.metrics__title { font-size: clamp(1.9rem, 6vw, 5rem); margin-bottom: clamp(36px, 6vw, 72px); }
+.metrics__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--yellow); }
+.metrics__item { padding: 22px 12px 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.metrics__num { display: block; font: 800 clamp(1.9rem, 3.5vw, 3.9rem)/1 var(--f-display); letter-spacing: -.05em; font-variant-numeric: tabular-nums; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; white-space: nowrap; }
+.metrics__cap { display: block; margin-top: 10px; font-size: .95rem; line-height: 1.35; color: var(--text-secondary); max-width: 20ch; }
+@media (min-width: 900px) {
+  .metrics__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .metrics__item { border-bottom: 0; border-right: 1px solid var(--line); padding: 32px 16px 0 0; }
+  .metrics__item + .metrics__item { padding-left: 20px; }
+  .metrics__item:last-child { border-right: 0; }
+}
+
+/* Параллакс фона карточек кейсов: --py ставит motion.js */
+.case-card::before { transform: translateY(var(--py, 0)) scale(1.14); }
+.case-card:hover::before, .case-card:focus-visible::before { transform: translateY(var(--py, 0)) scale(1.24) rotate(4deg); }
+
+/* Курсор «Смотреть» */
+.view-cursor {
+  position: fixed; left: 0; top: 0; z-index: 300; pointer-events: none;
+  width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--yellow); color: #14110A;
+  font: 600 11px/1 var(--f-inter); letter-spacing: .12em; text-transform: uppercase;
+  opacity: 0;
+  transition: scale .3s cubic-bezier(.2, .8, .2, 1), opacity .25s;
+  scale: 0;
+}
+.view-cursor.is-on { scale: 1; opacity: 1; }
+html.view-cursor-on .case-card, html.view-cursor-on .case-card *, html.view-cursor-on .cert__img--photo, html.view-cursor-on #cardScrollCanvas, html.view-cursor-on .vcard, html.view-cursor-on .vcard * { cursor: none !important; }
+@media (hover: none), (pointer: coarse) { .view-cursor { display: none; } }
+@media (prefers-reduced-motion: reduce) { .view-cursor { display: none; } }
+
+/* Маски SplitText не должны срезать верх/низ широких букв Unbounded */
+.motion-on .section__title > div, .motion-on .metrics__title > div { padding-block: .08em; margin-block: -.08em; }
+
+/* «Карьерный путь»: жёлтая линия-заполнение поверх серой, текущая роль — маджента */
+.timeline__fill { position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--yellow); transform-origin: top; transform: scaleY(0); pointer-events: none; }
+@media (min-width: 900px) { .timeline__fill { left: 185px; } }
+.timeline__item:first-child h3 { --row-ink: #C02070; color: var(--magenta); }
+.timeline__item:first-child::before { background: var(--magenta) !important; border-color: var(--magenta) !important; }
+.timeline__year { display: inline-block; perspective: 400px; }
+.timeline__item h3 { font-size: clamp(1.4rem, 3.4vw, 2.6rem); }
+html:not(.motion-on) .timeline__fill { display: none; }
+/* Числа никогда не обрезаются: размер от ширины колонки (самое длинное — «8,8 млн») */
+.metrics__item { container-type: inline-size; }
+.metrics__num { font-size: min(clamp(1.9rem, 3.5vw, 3.9rem), 18cqi); }

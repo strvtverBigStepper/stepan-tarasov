@@ -1,0 +1,68 @@
+/* ===== Портфолио: карточки едут вместе с прокруткой ===== */
+.portfolio {
+  position: relative;
+  height: 300vh; /* длина прокрутки (в резюме-версии короче: блок второстепенный) */
+  background: var(--bg);
+}
+
+.portfolio__sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh;
+  overflow: hidden;
+}
+
+.portfolio__head {
+  position: absolute; z-index: 0; /* заголовок ПОД карточками */
+  top: calc(var(--nav-h) + 24px); left: 0; right: 0;
+  pointer-events: none;
+}
+.portfolio__head .section__title { margin-bottom: 0; }
+/* Заголовок — контурный, за карточками: скриншоты проходят поверх, текст не спорит с ними */
+.portfolio__head .section__title {
+  color: transparent; -webkit-text-stroke: 1.5px rgba(247, 247, 248, .28);
+  font-size: clamp(2rem, 7vw, 7.5rem); white-space: nowrap; overflow-wrap: normal;
+}
+.portfolio__subtitle {
+  font-family: var(--f-hand);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+.card-scroll-wrap { position: absolute; inset: 0; z-index: 1; }
+#cardScrollCanvas { display: block; width: 100%; height: 100%; }
+
+.card-scroll-meta {
+  position: absolute; z-index: 2;
+  left: 40px; top: 50%; transform: translateY(-50%);
+  max-width: 300px;
+  pointer-events: none;
+}
+.card-scroll-meta__count {
+  font-family: var(--f-hand); font-weight: 500; color: var(--magenta);
+  font-size: .9rem; margin-bottom: 10px;
+}
+.card-scroll-meta__title {
+  font-family: var(--f-display); font-weight: 400; text-transform: uppercase;
+  font-size: 2rem; line-height: 1.1; color: var(--text);
+  margin-bottom: 10px;
+}
+.card-scroll-meta__desc {
+  font-weight: 300; font-size: 1rem; line-height: 1.5; color: var(--text-secondary);
+}
+
+@media (max-width: 899px) {
+  .card-scroll-meta {
+    left: 0; right: 0; top: auto; bottom: 0; transform: none;
+    max-width: none;
+    padding: 48px 20px 28px;
+    background: linear-gradient(to top, var(--bg) 70%, transparent);
+  }
+  .card-scroll-meta__title { font-size: 1.5rem; }
+  .card-scroll-meta__desc { font-size: .95rem; }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .card-scroll-meta { max-width: 220px; }
+}

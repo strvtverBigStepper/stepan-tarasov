@@ -1,0 +1,101 @@
+/* ===== 3D Case Showcase: логотип STPN в центре, кейсы по бокам ===== */
+.showcase3d {
+  position: relative;
+  height: 400vh;
+  background: var(--slate);
+}
+
+.showcase3d__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh; height: 100svh;
+  overflow: hidden;
+}
+
+#showcase3dCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.showcase3d__cards {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.showcase3d__card {
+  position: absolute;
+  top: 50%;
+  width: 340px;
+  padding: 2rem;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.showcase3d__card[data-index="0"],
+.showcase3d__card[data-index="2"] { left: 5%; }
+
+.showcase3d__card[data-index="1"],
+.showcase3d__card[data-index="3"] { right: 5%; text-align: right; }
+
+.showcase3d__card[data-index="1"] .showcase3d__metrics,
+.showcase3d__card[data-index="3"] .showcase3d__metrics { justify-content: flex-end; }
+
+.showcase3d__num {
+  font-family: var(--f-inter);
+  font-weight: 300;
+  font-size: .875rem;
+  color: var(--magenta);
+  letter-spacing: .05em;
+}
+
+.showcase3d__title {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  color: var(--cool-white);
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: .5rem 0;
+}
+
+.showcase3d__desc {
+  font-family: var(--f-inter);
+  font-weight: 300;
+  font-size: .9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.showcase3d__metrics { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.showcase3d__metric b {
+  display: block;
+  font-family: var(--f-inter);
+  font-weight: 900;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--magenta);
+  line-height: 1.2;
+}
+
+.showcase3d__metric span {
+  font-family: var(--f-inter);
+  font-weight: 400;
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .showcase3d__card {
+    width: 85%;
+    left: 7.5% !important;
+    right: auto !important;
+    top: auto;
+    bottom: 10%;
+    text-align: left !important;
+  }
+  .showcase3d__card .showcase3d__metrics { justify-content: flex-start !important; }
+}

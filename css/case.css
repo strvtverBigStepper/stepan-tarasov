@@ -1,0 +1,117 @@
+/* ===== Страница кейса: общий шаблон для страниц в папке cases/ =====
+   Цвета, шрифты, кнопки, .stats, .tools, .badges и рамки устройств берутся из style.css */
+
+.case-page { padding-top: calc(var(--nav-h) + 40px); }
+
+/* Шапка кейса */
+.case-page { position: relative; isolation: isolate; overflow-x: clip; }
+/* Шапка кейса: мягкое свечение палитры «Бренд» за заголовком (чистый CSS, без WebGL) */
+.case-hero { position: relative; padding-bottom: var(--section-pad); border-bottom: 1px solid var(--line); }
+.case-hero::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  top: calc(-1 * (var(--nav-h) + 40px)); right: -20vw; width: 80vw; height: 70vh; max-height: 640px;
+  border-radius: 50%; filter: blur(90px); opacity: .32;
+  background: radial-gradient(closest-side, var(--c1), transparent), radial-gradient(closest-side at 70% 50%, var(--c3), transparent), radial-gradient(closest-side at 30% 80%, var(--c4), transparent);
+}
+.case-hero__logo { height: 28px; width: auto; margin-bottom: 24px; }
+.case-hero__logo--beard { height: 22px; }
+.case-hero__back { display: inline-block; color: var(--text-secondary); margin-bottom: 32px; transition: color .2s; }
+.case-hero__back:hover { color: var(--yellow); }
+.case-hero__back { font-weight: 500; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; }
+.case-hero__kicker { font-weight: 500; color: var(--yellow); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
+.case-hero__title { font-size: clamp(2.4rem, 9vw, 7rem); line-height: .92; margin-bottom: 32px; overflow-wrap: anywhere; }
+.case-hero__lead { font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--cool-white); max-width: 760px; margin-bottom: 36px; }
+.case-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 900px) { .case-facts { grid-template-columns: repeat(4, 1fr); } }
+.case-facts div { background: rgba(21, 19, 28, .85); padding: 18px; }
+.case-facts dt { color: var(--text-secondary); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.case-facts dd { font-weight: 600; }
+
+/* Секции */
+.case-block { padding: var(--section-pad) 0; border-bottom: 1px solid var(--line); }
+.case-block__title { font-size: clamp(1.8rem, 5vw, 3.6rem); margin-bottom: 36px; }
+.case-text { color: var(--text-secondary); max-width: 760px; }
+.case-text p + p { margin-top: 16px; }
+.case-text b { color: var(--cool-white); }
+.case-cols { display: grid; gap: 40px; }
+@media (min-width: 900px) { .case-cols { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.case-subtitle { font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 600; letter-spacing: -.01em; text-transform: none; color: var(--cool-white); margin-bottom: 16px; }
+
+/* Структура лендинга по блокам */
+.case-steps { counter-reset: step; display: grid; gap: 12px; max-width: 860px; margin-bottom: 48px; }
+.case-steps li {
+  counter-increment: step;
+  display: grid; grid-template-columns: 44px 1fr; gap: 12px;
+  background: var(--slate-mid); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; transition: border-color .3s;
+}
+.case-steps li:hover { border-color: var(--yellow); }
+.case-steps li::before { content: counter(step, decimal-leading-zero); font: 500 12px/1.9 var(--f-inter); letter-spacing: .1em; color: var(--yellow); }
+.case-steps b { display: block; color: var(--cool-white); }
+.case-steps span { color: var(--text-secondary); }
+
+/* Визуал: ноутбук с видео + телефон */
+.case-visual { display: grid; gap: 48px; align-items: end; }
+@media (min-width: 900px) { .case-visual { grid-template-columns: 1fr auto; gap: 64px; } }
+.case-visual .device--phone { justify-self: center; }
+.case-visual figcaption { color: var(--text-secondary); font-size: .9rem; margin-top: 16px; text-align: center; }
+.device__placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px;
+  font-family: var(--f-hand); color: var(--text-secondary); background: var(--slate-mid);
+  overflow-wrap: anywhere;
+}
+.case-shots { display: grid; gap: 24px; margin-top: 48px; }
+@media (min-width: 900px) { .case-shots { grid-template-columns: repeat(2, 1fr); } }
+.case-shots img { border-radius: var(--radius); border: 1px solid var(--line); }
+
+.case-note { color: var(--text-secondary); font-size: .9rem; margin-top: 14px; }
+
+/* Навигация между кейсами */
+.case-nav { padding: var(--section-pad) 0; }
+.case-nav__row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.case-nav__links { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 480px) {
+  .case-nav__row .btn, .case-nav__links, .case-nav__links .btn { width: 100%; }
+}
+
+/* Метрики роста (js/scroll-reveal.js) на странице кейса — заголовок в стиле редизайна */
+.case-page .scroll-reveal-heading { font-family: var(--f-display); font-weight: 800; letter-spacing: -.04em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (prefers-reduced-motion: reduce) { .case-steps li { transition: none; } }
+
+/* Резюме-версия: список зоны ответственности; десктоп-макет на всю ширину, пока нет мобильного скриншота */
+.case-list { display: grid; gap: 10px; }
+.case-list b { color: var(--cool-white); }
+.case-visual:has(> figure:only-of-type) { grid-template-columns: minmax(0, 1fr); max-width: 900px; }
+/* Полная страница сайта в рамке с внутренней прокруткой */
+.case-fullpage { margin: 40px 0; max-width: 900px; }
+.case-fullpage__scroll { max-height: 70vh; overflow-y: auto; border: 1px solid var(--slate-light); border-radius: 12px; }
+.case-fullpage__scroll img { display: block; width: 100%; height: auto; }
+.case-fullpage__scroll:focus-visible { outline: 2px solid var(--yellow); outline-offset: 4px; }
+/* Галерея лендингов */
+.lgrid { display: grid; gap: 28px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); margin-top: 24px; }
+.lcard { all: unset; box-sizing: border-box; display: grid; gap: 12px; cursor: zoom-in; min-width: 0; }
+.lcard:focus-visible { outline: 2px solid var(--yellow); outline-offset: 6px; border-radius: 8px; }
+.lcard__devices { position: relative; display: block; padding-right: 14%; }
+.lcard__laptop { display: block; }
+.lcard__laptop .device__screen { display: block; aspect-ratio: 16 / 10; }
+.lcard__phone { position: absolute; right: 0; bottom: -6px; width: 26%; }
+.lcard__phone .device__screen { display: block; aspect-ratio: 390 / 844; }
+.lcard__cap { color: var(--text-secondary); font-size: .9rem; }
+.lcard:hover .lcard__cap { color: var(--cool-white); }
+.lcard:hover .device__screen img { transform: scale(1.03); }
+.lcard .device__screen img { transition: transform .5s ease; }
+.lbox { margin: auto; width: min(1100px, 96vw); height: 92vh; padding: 0; border: 1px solid var(--slate-light); border-radius: 14px; background: var(--slate-mid); color: var(--cool-white); }
+.lbox[open] { display: flex; flex-direction: column; }
+.lbox::backdrop { background: rgba(11, 10, 16, .85); }
+.lbox__bar { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 18px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.lbox__title { flex: 1; min-width: 0; }
+.lbox__toggle { display: flex; gap: 4px; }
+.lbox__mode { border: 1px solid var(--slate-light); background: none; color: var(--text-secondary); padding: 7px 12px; border-radius: 999px; font: 600 .85rem var(--f-inter); cursor: pointer; }
+.lbox__mode.is-on { background: var(--yellow); border-color: var(--yellow); color: #14110A; }
+.lbox__close { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--yellow); color: #14110A; font: 600 24px/1 var(--f-inter); cursor: pointer; }
+.lbox__scroll { flex: 1; overflow-y: auto; background: var(--bg); }
+.lbox__img { display: block; width: 100%; height: auto; margin: 0 auto; }
+.lbox.is-mobile .lbox__img { width: min(390px, 100%); }
+.lcard__phone .device__screen { border-width: 4px; border-radius: 14px; } .lcard__laptop .device__screen { border-width: 6px; }
+.lbox__toggle[hidden] { display: none; }
